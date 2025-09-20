@@ -1,19 +1,22 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'POS Low Cost Alert',
+    'name': 'Alerta POS Precio Bajo - RENACE',
     'version': '18.0.1.0.0',
-    'category': 'Point of Sale',
-    'summary': 'Alert when selling below cost price with password authorization',
+    'category': 'Punto de Venta',
+    'summary': 'Sistema de alerta para ventas por debajo del precio de costo con autorización por contraseña',
     'description': '''
-    This module provides an alert system for Point of Sale when products are being sold below their cost price.
-    Features:
-    - Automatic detection of products sold below cost
-    - Warning dialog with product details
-    - Password authorization system for supervisor override
-    - Clean and professional UI
+    Módulo desarrollado por RENACE.TECH que proporciona un sistema de alerta para el Punto de Venta 
+    cuando los productos se venden por debajo de su precio de costo.
+    
+    Características:
+    - Detección automática de productos vendidos por debajo del costo
+    - Diálogo de advertencia con detalles del producto
+    - Sistema de autorización por contraseña para supervisores
+    - Interfaz limpia y profesional
+    - Desarrollado específicamente para entornos empresariales
     ''',
-    'author': 'ExpertosTI',
-    'website': 'https://github.com/ExpertosTI/pos_low_cost',
+    'author': 'RENACE.TECH',
+    'website': 'https://www.renace.tech',
     'depends': ['point_of_sale'],
     'assets': {
         'point_of_sale._assets_pos': [

@@ -1,39 +1,46 @@
-POS Low Cost Alert
-==================
+Alerta POS Precio Bajo - RENACE
+===============================
 
-Alert system for Odoo Point of Sale when selling products below cost price.
+Sistema de alerta desarrollado por RENACE.TECH para Odoo Punto de Venta cuando se venden productos por debajo del precio de costo.
 
-Features
---------
+Características
+---------------
 
-* Automatic detection of products sold below cost
-* Warning dialog with product details  
-* Password authorization for supervisor override
-* Clean and professional UI
+* Detección automática de productos vendidos por debajo del costo
+* Diálogo de advertencia con detalles del producto  
+* Sistema de autorización por contraseña para supervisores
+* Interfaz limpia y profesional
+* Desarrollado específicamente para entornos empresariales
 
-Installation
-------------
+Instalación
+-----------
 
-1. Copy this module to your Odoo addons directory
-2. Update the app list
-3. Install the module from Apps menu
+1. Copie este módulo a su directorio de addons de Odoo
+2. Actualice la lista de aplicaciones
+3. Instale el módulo desde el menú Aplicaciones
 
-Configuration
+Configuración
 -------------
 
-Change the authorization password in:
-``static/src/js/password_dialog.js`` line 43
+Para cambiar la contraseña de autorización, modifique:
+``static/src/js/password_dialog.js`` línea 43
 
-Usage
------
+Uso
+---
 
-When attempting to validate an order with products below cost price:
+Cuando intente validar una orden con productos por debajo del precio de costo:
 
-1. A warning dialog will appear showing affected products
-2. Click "Atrás" to cancel and adjust prices
-3. Click "Autorizar con Contraseña" to override with password
+1. Aparecerá un diálogo de advertencia mostrando los productos afectados
+2. Haga clic en "Atrás" para cancelar y ajustar precios
+3. Haga clic en "Autorizar con Contraseña" para anular con contraseña
 
-License
--------
+Desarrollado por
+----------------
+
+**RENACE.TECH** - Soluciones tecnológicas empresariales
+Sitio web: https://www.renace.tech
+
+Licencia
+--------
 
 AGPL-3
