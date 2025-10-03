@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vista de formulario para configuración del POS -->
+        <record id="view_pos_config_form_inherit" model="ir.ui.view">
+            <field name="name">pos.config.form.inherit.low.price</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <!-- Agregar el campo en la sección de configuración general -->
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="pos_low_price_password" 
+                           password="True"
+                           string="Contraseña de Autorización de Precios Bajos"
+                           placeholder="Ingrese la contraseña de autorización..."
+                           help="Esta contraseña será requerida para autorizar ventas por debajo del precio de costo"/>
+                    <field name="pos_master_code" 
+                           password="True"
+                           string="Código Maestro"
+                           placeholder="Ingrese el código maestro..."
+                           help="Código maestro requerido para cambiar la contraseña de autorización"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

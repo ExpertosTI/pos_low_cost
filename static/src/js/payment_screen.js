@@ -3,6 +3,7 @@
 import { patch } from "@web/core/utils/patch";
 import { PaymentScreen } from "@point_of_sale/app/screens/payment_screen/payment_screen";
 import { PasswordDialog } from "./password_dialog";
+import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { _t } from "@web/core/l10n/translation";
 
 patch(PaymentScreen.prototype, {
@@ -16,7 +17,7 @@ patch(PaymentScreen.prototype, {
             
             const message = `Los siguientes productos están por debajo del precio de costo:\n\n${productDetails}\n\nPor favor, corrija los precios antes de continuar.`;
             
-            this.dialog.add(this.constructor.components.ConfirmationDialog, {
+            this.dialog.add(ConfirmationDialog, {
                 title: _t("Advertencia: Precios Bajos"),
                 body: message,
                 confirmLabel: _t("Atrás"),
@@ -37,8 +38,13 @@ patch(PaymentScreen.prototype, {
         
         for (const line of order.get_orderlines()) {
             const product = line.get_product();
+            // Verificar si el precio de venta es menor al costo estándar
             if (product.standard_price > 0 && line.get_unit_price() < product.standard_price) {
-                lowPriceProducts.push(product);
+                lowPriceProducts.push({
+                    name: product.display_name,
+                    cost: product.standard_price,
+                    price: line.get_unit_price()
+                });
             }
         }
         

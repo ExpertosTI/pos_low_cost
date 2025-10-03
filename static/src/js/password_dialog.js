@@ -5,7 +5,7 @@ import { Dialog } from "@web/core/dialog/dialog";
 import { _t } from "@web/core/l10n/translation";
 
 export class PasswordDialog extends Component {
-    static template = "pos_low_sales_price.PasswordDialog";
+    static template = "pos_low_cost.PasswordDialog";
     static components = { Dialog };
     static props = {
         title: { type: String, optional: true },
@@ -38,7 +38,9 @@ export class PasswordDialog extends Component {
             return;
         }
 
-        const validPassword = "MiContraseñaSegura2024";
+        // Obtener la contraseña configurada desde el POS config
+        const posStore = this.env.services.pos;
+        const validPassword = posStore.config.pos_low_price_password || "admin123";
         
         if (password === validPassword) {
             this.props.confirm();
